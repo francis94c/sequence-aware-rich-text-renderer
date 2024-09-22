@@ -27,6 +27,10 @@ This package was built with flexibility in mind and may be used beyond what I im
 Nevertheless, contributions are always welcome.
 
 ```dart
+import 'package:sequence_aware_rich_text_renderer/sequence_aware_rich_text_renderer.dart';
+.
+.
+.
 const SequenceAwareRichText(
     "Please note that transactions below ₦5,000 will attract a service charge of ₦10, while transactions "
     "above ₦5,000 will attract a service charge of ₦25.",
@@ -43,7 +47,7 @@ const SequenceAwareRichText(
         color: Colors.black,
         fontFamily: 'DMSans',
     ),
-)
+);
 ```
 
 ## Additional information
