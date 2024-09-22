@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './sequence.dart';
+import 'package:sequence_aware_rich_text_renderer/sequence_aware_rich_text_renderer.dart';
 
 class SequenceAwareRichText extends StatefulWidget {
   final String text;
