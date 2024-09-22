@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Sequence {
-  final int start;
-  final int end;
-  final TextStyle style;
+  final String sequence;
+  final TextStyle? style;
 
-  Sequence(this.start, this.end, this.style);
+  const Sequence(this.sequence, {this.style});
 }
