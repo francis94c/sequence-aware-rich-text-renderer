@@ -14,11 +14,14 @@ class SequenceAwareRichText extends StatefulWidget {
   });
 
   @override
-  State<SequenceAwareRichText> createState() => _SequenceAwareRichTextState();
+  State<SequenceAwareRichText> createState() => SequenceAwareRichTextState();
 }
 
-class _SequenceAwareRichTextState extends State<SequenceAwareRichText> {
+class SequenceAwareRichTextState extends State<SequenceAwareRichText> {
   List<TextSpan> _spans = [];
+
+  @visibleForTesting
+  int get spanCount => _spans.length;
 
   @override
   void initState() {
@@ -77,7 +80,7 @@ class _SequenceAwareRichTextState extends State<SequenceAwareRichText> {
             style: parentSequence?.style,
           ),
         );
-      } else {
+      } else if (matches.elementAt(x).end < text.length) {
         spans.add(
           TextSpan(
             text: text.substring(matches.elementAt(x).end),

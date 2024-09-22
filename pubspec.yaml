@@ -1,6 +1,6 @@
 name: sequence_aware_rich_text_renderer
 description: 'A new Flutter package project.'
-version: 0.0.1
+version: 1.0.0
 homepage:
 
 environment:
@@ -15,6 +15,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  test: ^1.25.7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
