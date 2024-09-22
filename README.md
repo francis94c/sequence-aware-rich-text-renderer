@@ -1,39 +1,51 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# sequence-aware-rich-text-renderer
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A RichText widget that allows you to break-down and customize certain parts of its content as spans just by specifying the actual segment or characters you want styled differently.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- RichTextWidget.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Run
+
+```bash
+flutter pub add sequence-aware-rich-text-renderer
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+The use case that inspired the creation of this package is about a problem with custom fonts that fail to support some characters like '₦' for example, but is supported by the native font being used by the application. I recon there are also other use cases where multiple font families have to be combined to produce some sort of visual effect.
+
+Below is an example of how you'd typically use the widget this package provides, to solve the problem, or achieve what you have in mind.
+
+This package was built with flexibility in mind and may be used beyond what I imagined it for.
+
+Nevertheless, contributions are always welcome.
 
 ```dart
-const like = 'sample';
+const SequenceAwareRichText(
+    "Please note that transactions below ₦5,000 will attract a service charge of ₦10, while transactions "
+    "above ₦5,000 will attract a service charge of ₦25.",
+    sequences: [
+        Sequence(
+        '₦',
+        style: TextStyle(
+            fontFamily: 'Roboto',
+            color: Colors.red,
+            ),
+        ),
+    ],
+    style: TextStyle(
+        color: Colors.black,
+        fontFamily: 'DMSans',
+    ),
+)
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+PRs are welcome.
