@@ -3,6 +3,10 @@ description: An extended Flutter RichText widget that applies custom properties 
 version: 1.0.1
 repository: https://github.com/francis94c/sequence-aware-rich-text-renderer
 
+screenshots:
+  - description: Example usage.
+    path: screenshots/example.png
+
 environment:
   sdk: ^3.5.2
   flutter: '>=1.17.0'

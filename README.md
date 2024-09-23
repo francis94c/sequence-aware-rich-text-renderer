@@ -1,8 +1,12 @@
 # sequence-aware-rich-text-renderer
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![pub package](https://img.shields.io/pub/v/sequence_aware_rich_text_renderer.svg)](https://pub.dev/packages/sequence_aware_rich_text_renderer)
 
 A RichText widget that allows you to break-down and customize certain parts of its content as spans just by specifying the actual segment or characters you want styled differently.
+
+<div style="text-align: center;">
+  <img src="https://github.com/francis94c/sequence-aware-rich-text-renderer/blob/master/screenshots/example.png?raw=true">
+</div>
 
 ## Features
 
