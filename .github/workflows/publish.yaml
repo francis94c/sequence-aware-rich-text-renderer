@@ -32,4 +32,4 @@ jobs:
       #   run: echo ${{ secrets.PUB_CREDENTIAL_JSON }} > $HOME/.pub-cache/credentials.json
 
       - name: Publish Package
-        run: flutter pub publish
+        run: flutter pub publish --force
