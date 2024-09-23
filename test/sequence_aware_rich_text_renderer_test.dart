@@ -38,6 +38,7 @@ void main() {
               sequences: const [
                 Sequence("₦", style: TextStyle(color: Colors.red)),
               ],
+              style: const TextStyle(fontSize: 20),
             ),
           ),
         ),
@@ -83,6 +84,10 @@ void main() {
         color: Colors.red,
         fontSize: 20,
         fontFamily: 'Roboto',
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+        decorationStyle: TextDecorationStyle.dashed,
+        decoration: TextDecoration.underline,
       ),
     );
     final json = sequence.toJson();
@@ -92,5 +97,15 @@ void main() {
     expect(sequence.style?.color?.value, sequenceFromJson.style?.color?.value);
     expect(sequence.style?.fontSize, sequenceFromJson.style?.fontSize);
     expect(sequence.style?.fontFamily, sequenceFromJson.style?.fontFamily);
+    expect(sequence.style?.fontWeight, sequenceFromJson.style?.fontWeight);
+    expect(sequence.style?.fontStyle, sequenceFromJson.style?.fontStyle);
+    expect(
+      sequence.style?.decoration,
+      sequenceFromJson.style?.decoration,
+    );
+    expect(
+      sequence.style?.decorationStyle,
+      sequenceFromJson.style?.decorationStyle,
+    );
   });
 }
