@@ -18,4 +18,4 @@ jobs:
       - uses: dart-lang/setup-dart@v1
 
       - name: Publish
-        run: dart pub publish --force
+        run: flutter pub publish --force
