@@ -24,12 +24,16 @@ jobs:
         with:
           channel: 'stable'
 
-      - uses: flutter-actions/setup-pubdev-credentials@v1
-        # with:
-        #   pub_credentials: ${{ secrets.PUB_CREDENTIAL_JSON }}
+      # - uses: flutter-actions/setup-pubdev-credentials@v1
+      #   # with:
+      #   pub_credentials: ${{ secrets.PUB_CREDENTIAL_JSON }}
 
-      # - name: Install Pub Credentials
-      #   run: echo ${{ secrets.PUB_CREDENTIAL_JSON }} > $HOME/.pub-cache/credentials.json
+      - name: Install Pub Credentials
+        run: echo ${{ secrets.PUB_CREDENTIAL_JSON }} > $HOME/.pub-cache/credentials.json
 
       - name: Publish Package
         run: flutter pub publish --force
+
+      - if: always()
+        name: Clean Up
+        run: rm $HOME/.pub-cache/credentials.json
