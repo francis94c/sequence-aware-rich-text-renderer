@@ -1,39 +1,14 @@
 name: publish
 
 on:
-  # release:
-  #   types:
-  #     - published
   push:
-    branches:
-      - master
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   publish:
     permissions:
       id-token: write
-      contents: read
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v1
-        with:
-          channel: 'stable'
-
-      # - uses: flutter-actions/setup-pubdev-credentials@v1
-      #   # with:
-      #   pub_credentials: ${{ secrets.PUB_CREDENTIAL_JSON }}
-
-      - name: Install Pub Credentials
-        run: echo ${{ secrets.PUB_CREDENTIAL_JSON }} > $HOME/.pub-cache/credentials.json
-
-      - name: Publish Package
-        run: flutter pub publish --force
-
-      - if: always()
-        name: Clean Up
-        run: rm $HOME/.pub-cache/credentials.json
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    with:
+      environment: pub.dev
