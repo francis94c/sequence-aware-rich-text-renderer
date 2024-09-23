@@ -95,9 +95,10 @@ class SequenceAwareRichTextState extends State<SequenceAwareRichText> {
   @override
   Widget build(BuildContext context) {
     return RichText(
-        text: TextSpan(
-      children: _spans,
-      style: widget.style,
-    ));
+      text: TextSpan(
+        children: _spans,
+        style: widget.style,
+      ),
+    );
   }
 }
