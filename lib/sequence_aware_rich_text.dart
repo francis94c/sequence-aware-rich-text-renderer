@@ -12,11 +12,51 @@ class SequenceAwareRichText extends StatefulWidget {
   /// The global or root style, equivalent to the top level TextSpan style of a RichText widget.
   final TextStyle? style;
 
+  /// The text alignment.
+  final TextAlign textAlign;
+
+  /// The text direction.
+  final TextDirection? textDirection;
+
+  /// Whether the text should break at soft line breaks.
+  final bool softWrap;
+
+  /// How visual overflow should be handled.
+  final TextOverflow overflow;
+
+  /// The maximum number of lines for the text to span, wrapping if necessary.
+  final int? maxLines;
+
+  /// The text scaler to use for scaling the text.
+  final TextScaler textScaler;
+
+  /// The locale to use for the text.
+  final Locale? locale;
+
+  /// The strut style to use for the text.
+  final StrutStyle? strutStyle;
+
+  /// The text width basis to use for the text.
+  final TextWidthBasis textWidthBasis;
+
+  /// The color to use for the text selection highlight.
+  final Color? selectionColor;
+
   /// Creates a new instance of [SequenceAwareRichText] widget.
   const SequenceAwareRichText(
     this.text, {
     super.key,
     this.style,
+    this.textDirection,
+    this.maxLines,
+    this.locale,
+    this.strutStyle,
+    this.softWrap = true,
+    this.selectionColor,
+    this.textWidthBasis = TextWidthBasis.parent,
+    this.textScaler = TextScaler.noScaling,
+    this.overflow = TextOverflow.clip,
+    this.textAlign = TextAlign.start,
     this.sequences = const [],
   });
 
@@ -108,6 +148,16 @@ class SequenceAwareRichTextState extends State<SequenceAwareRichText> {
         children: _spans,
         style: widget.style,
       ),
+      textAlign: widget.textAlign,
+      textDirection: widget.textDirection,
+      softWrap: widget.softWrap,
+      overflow: widget.overflow,
+      maxLines: widget.maxLines,
+      textScaler: widget.textScaler,
+      locale: widget.locale,
+      strutStyle: widget.strutStyle,
+      textWidthBasis: widget.textWidthBasis,
+      selectionColor: widget.selectionColor,
     );
   }
 }
