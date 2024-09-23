@@ -75,4 +75,22 @@ void main() {
     expect(widget.text, "Hello World ₦");
     expect(key.currentState?.spanCount, 4);
   });
+
+  test('Test Sequence toJson and fromJson', () {
+    const sequence = Sequence(
+      "₦",
+      style: TextStyle(
+        color: Colors.red,
+        fontSize: 20,
+        fontFamily: 'Roboto',
+      ),
+    );
+    final json = sequence.toJson();
+    final sequenceFromJson = Sequence.fromJson(json);
+
+    expect(sequence.sequence, sequenceFromJson.sequence);
+    expect(sequence.style?.color?.value, sequenceFromJson.style?.color?.value);
+    expect(sequence.style?.fontSize, sequenceFromJson.style?.fontSize);
+    expect(sequence.style?.fontFamily, sequenceFromJson.style?.fontFamily);
+  });
 }

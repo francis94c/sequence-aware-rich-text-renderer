@@ -9,3 +9,8 @@
 ## 1.0.2
 
 - Topics.
+
+## 1.1.0
+
+- JSON Serialization and DeSerialization of Sequence Object.
+- Adapt more RichText widget properties.
