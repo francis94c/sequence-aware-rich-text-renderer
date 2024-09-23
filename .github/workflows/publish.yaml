@@ -10,6 +10,7 @@ jobs:
     permissions:
       id-token: write
     runs-on: ubuntu-latest
+    environment: pub.dev
 
     steps:
       - name: Checkout
