@@ -11,6 +11,7 @@ A RichText widget that allows you to break-down and customize certain parts of i
 ## Features
 
 - RichTextWidget.
+- Sequence JSON Serialization for dynamic styling and persistence.
 
 ## Getting started
 
@@ -53,6 +54,8 @@ const SequenceAwareRichText(
     ),
 );
 ```
+
+**NB**: The `Sequence` object has toJson and fromJson methods for serialization and de-serialization.
 
 ## Additional information
 
