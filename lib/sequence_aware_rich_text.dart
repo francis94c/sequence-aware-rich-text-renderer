@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:sequence_aware_rich_text_renderer/sequence_aware_rich_text_renderer.dart';
 
+/// SequenceAwareRichText Widget.
 class SequenceAwareRichText extends StatefulWidget {
+  /// The text to render be style by provided sequence.
   final String text;
+
+  /// The list of sequences to style.
   final List<Sequence> sequences;
+
+  /// The global or root style, equivalent to the top level TextSpan style of a RichText widget.
   final TextStyle? style;
 
+  /// Creates a new instance of [SequenceAwareRichText] widget.
   const SequenceAwareRichText(
     this.text, {
     super.key,
@@ -17,9 +24,11 @@ class SequenceAwareRichText extends StatefulWidget {
   State<SequenceAwareRichText> createState() => SequenceAwareRichTextState();
 }
 
+/// State class for [SequenceAwareRichText].
 class SequenceAwareRichTextState extends State<SequenceAwareRichText> {
   List<TextSpan> _spans = [];
 
+  /// The number of spans in the RichText widget after the text has been analyzed.
   @visibleForTesting
   int get spanCount => _spans.length;
 
