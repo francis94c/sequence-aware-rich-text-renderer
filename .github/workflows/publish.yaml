@@ -1,19 +1,35 @@
 name: publish
 
 on:
+  # release:
+  #   types:
+  #     - published
   push:
     branches:
       - master
 
 jobs:
   publish:
+    permissions:
+      id-token: write
+      contents: read
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Publish Package
-        uses: sakebook/actions-flutter-pub-publisher@v1.4.1
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
         with:
-          credential: ${{ secrets.PUB_CREDENTIAL_JSON }}
+          channel: 'stable'
+
+      - uses: flutter-actions/setup-pubdev-credentials@v1
+        # with:
+        #   pub_credentials: ${{ secrets.PUB_CREDENTIAL_JSON }}
+
+      # - name: Install Pub Credentials
+      #   run: echo ${{ secrets.PUB_CREDENTIAL_JSON }} > $HOME/.pub-cache/credentials.json
+
+      - name: Publish Package
+        run: flutter pub publish
