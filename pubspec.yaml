@@ -1,6 +1,6 @@
 name: sequence_aware_rich_text_renderer
 description: An extended Flutter RichText widget that applies custom properties to the TextSpan of specified character sequences
-version: 1.0.1
+version: 1.0.2
 repository: https://github.com/francis94c/sequence-aware-rich-text-renderer
 
 screenshots:

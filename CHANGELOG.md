@@ -5,3 +5,7 @@
 ## 1.0.1
 
 - Code Documentation.
+
+## 1.0.2
+
+- Topics.
