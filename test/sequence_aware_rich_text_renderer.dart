@@ -25,7 +25,7 @@ void main() {
     expect(key.currentState?.spanCount, 1);
   });
 
-  testWidgets('Render with sequence', (WidgetTester tester) async {
+  testWidgets('Render with 1 sequence', (WidgetTester tester) async {
     final key = GlobalKey<SequenceAwareRichTextState>();
 
     await tester.pumpWidget(
@@ -48,5 +48,31 @@ void main() {
         .widget<SequenceAwareRichText>(find.byType(SequenceAwareRichText));
     expect(widget.text, "Hello World ₦");
     expect(key.currentState?.spanCount, 2);
+  });
+
+  testWidgets('Render with 2 sequence', (WidgetTester tester) async {
+    final key = GlobalKey<SequenceAwareRichTextState>();
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: Center(
+            child: SequenceAwareRichText(
+              "Hello World ₦",
+              key: key,
+              sequences: const [
+                Sequence("₦", style: TextStyle(color: Colors.red)),
+                Sequence("World", style: TextStyle(color: Colors.blue)),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+
+    final widget = tester
+        .widget<SequenceAwareRichText>(find.byType(SequenceAwareRichText));
+    expect(widget.text, "Hello World ₦");
+    expect(key.currentState?.spanCount, 4);
   });
 }
