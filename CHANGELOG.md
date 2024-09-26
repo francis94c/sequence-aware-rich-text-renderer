@@ -14,3 +14,7 @@
 
 - JSON Serialization and DeSerialization of Sequence Object.
 - Adapt more RichText widget properties.
+
+## 1.1.1
+
+- Lower Flutter SDK Requirement.
