@@ -18,3 +18,7 @@
 ## 1.1.1
 
 - Lower Flutter SDK Requirement.
+
+## 1.1.2
+
+- Set default `fontFamily` value for sequence `TextStyle` to empty string `''`.
