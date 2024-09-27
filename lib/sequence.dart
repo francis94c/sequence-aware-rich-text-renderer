@@ -17,7 +17,7 @@ class Sequence {
       json['sequence'] as String,
       style: json['style'] != null
           ? TextStyle(
-              fontFamily: json['style']['font_family'],
+              fontFamily: json['style']['font_family'] ?? '',
               fontSize: json['style']['font_size'],
               fontWeight: json['style']['font_weight'] != null
                   ? FontWeight.values[json['style']['font_weight']]
