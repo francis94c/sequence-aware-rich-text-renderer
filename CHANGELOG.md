@@ -22,3 +22,7 @@
 ## 1.1.2
 
 - Set default `fontFamily` value for sequence `TextStyle` to empty string `''`.
+
+## 1.1.3
+
+- Bug Fixes.

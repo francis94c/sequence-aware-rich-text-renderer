@@ -106,34 +106,32 @@ class SequenceAwareRichTextState extends State<SequenceAwareRichText> {
   }
 
   List<TextSpan> _processSequence(
-      Sequence sequence, String text, Iterable<Match> matches,
-      {Sequence? parentSequence}) {
+      Sequence sequence, String text, Iterable<Match> matches) {
     List<TextSpan> spans = [];
     for (var x = 0; x < matches.length; x++) {
       if (matches.first.start == matches.elementAt(x).start) {
         spans.add(TextSpan(
           text: text.substring(0, matches.elementAt(x).start),
-          style: parentSequence?.style,
         ));
       }
       spans.add(TextSpan(
         text: text.substring(
             matches.elementAt(x).start, matches.elementAt(x).end),
-        style: sequence.style,
+        style: sequence.style?.copyWith(
+          fontFamily: sequence.style?.fontFamily ?? '',
+        ),
       ));
       if (x + 1 <= matches.length - 1) {
         spans.add(
           TextSpan(
             text: text.substring(
                 matches.elementAt(x).end, matches.elementAt(x + 1).start),
-            style: parentSequence?.style,
           ),
         );
       } else if (matches.elementAt(x).end < text.length) {
         spans.add(
           TextSpan(
             text: text.substring(matches.elementAt(x).end),
-            style: parentSequence?.style,
           ),
         );
       }
