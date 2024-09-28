@@ -43,7 +43,6 @@ const SequenceAwareRichText(
         Sequence(
         '₦',
         style: TextStyle(
-            fontFamily: 'Roboto',
             color: Colors.red,
             ),
         ),

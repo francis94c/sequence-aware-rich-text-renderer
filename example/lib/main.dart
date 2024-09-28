@@ -66,14 +66,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     Sequence(
                       '₦',
                       style: TextStyle(
-                        fontFamily: 'Roboto',
                         color: Colors.red,
                       ),
                     ),
                     Sequence(
                       'widget',
                       style: TextStyle(
-                        fontFamily: 'Roboto',
                         color: Colors.blue,
                       ),
                     ),
