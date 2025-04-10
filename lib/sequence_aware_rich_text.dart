@@ -146,7 +146,7 @@ class SequenceAwareRichTextState extends State<SequenceAwareRichText> {
     return RichText(
       text: TextSpan(
         children: _spans,
-        style: widget.style,
+        style: widget.style ?? Theme.of(context).textTheme.bodyMedium,
       ),
       textAlign: widget.textAlign,
       textDirection: widget.textDirection,
