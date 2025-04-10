@@ -88,6 +88,8 @@ class SequenceAwareRichTextState extends State<SequenceAwareRichText> {
         matches = RegExp(sequence.sequence).allMatches(widget.text);
         if (matches.isNotEmpty) {
           _spans = _processSequence(sequence, widget.text, matches);
+        } else {
+          _spans.add(TextSpan(text: widget.text));
         }
       } else {
         List<TextSpan> tempSpans = [];
